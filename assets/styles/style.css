@@ -1,0 +1,22 @@
+/* 'body' é o seletor de nome tag, ou seja, a qual tags HTML as regras abaixo serão aplicadas */
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif; /* como font-family é uma regra herdada pelos elementos filhos de body, aplicar a font-family no body altera as fontes do site todo */
+}
+
+/* Seletores podem ser: nomes de tag, classes ou ids */
+
+/* Seletores de nome de classe sempre começam com um ".", porém esse ponto NÃO faz parte do atributo "class" do HTML */
+.upper-header-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.horizontal-menu {
+  display: inline;
+}
+
+/* Seletor descendente, ou seja, seleciona os lis descendentes do elemento com a classe horizontal-menu */
+.horizontal-menu li {
+  display: inline;
+}
