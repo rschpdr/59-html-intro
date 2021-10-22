@@ -1,7 +1,13 @@
-/* 'body' é o seletor de nome tag, ou seja, a qual tags HTML as regras abaixo serão aplicadas */
+/* "*" é um seletor "wildcard", que seleciona TODOS os elementos da página */
+* {
+  box-sizing: border-box; /* O border-box faz com que a borda e o padding do elemento sejam considerados na altura e largura final fixada pra esse elemento. Dessa forma, evitamos situações em que o elemento fica maior do que o tamanho definido por nós */
+}
+
+/* 'body' é o seletor de nome tag, ou seja, a quais tags HTML as regras abaixo serão aplicadas */
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif; /* como font-family é uma regra herdada pelos elementos filhos de body, aplicar a font-family no body altera as fontes do site todo */
+  margin: 25px;
 }
 
 /* Seletores podem ser: nomes de tag, classes ou ids */
@@ -10,13 +16,155 @@ body {
 .upper-header-section {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .horizontal-menu {
   display: inline;
+  padding-left: 0;
 }
 
 /* Seletor descendente, ou seja, seleciona os lis descendentes do elemento com a classe horizontal-menu */
 .horizontal-menu li {
   display: inline;
+}
+
+.logo-container {
+  width: 20%;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+/* Essa classe sobrescreve o display da classe horizantal-menu pois ela está abaixo. Pela regra da cascata do CSS, quanto mais abaixo uma regra, maior sua prioridade */
+.nav-menu {
+  display: flex;
+  justify-content: space-evenly;
+  border: solid 1px black;
+  padding: 10px 0 15px 0; /* cima direita baixo esquerda */
+}
+
+.row {
+  width: 100%;
+}
+
+/* clearfix (solução das colunas não ficarem uma do lado da outra) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.col {
+  padding-right: 10px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+}
+
+.col-50 {
+  float: left;
+  width: 50%;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+}
+
+.box {
+  border: 1px solid black;
+  padding: 0 15px 15px 15px;
+}
+
+.article-box {
+  margin-bottom: 15px;
+}
+
+/* Pseudo-seletores: seletores especiais que selecionam elementos com condições */
+.article-box :last-child {
+  /* Seleciona somente o último (ou seja, mais abaixo) elemento filho do elemento com a classe article-box */
+  text-align: end;
+}
+
+.product-box {
+  margin: 10px;
+}
+
+.full-width-banner {
+  width: 100%;
+}
+
+.lower-section-banners {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.lower-section-banners img {
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+}
+
+.btn {
+  border-radius: 0;
+  font-size: 1.2rem; /* o rem equivale ao tamanho de fonte do elemento <html>. Por padrão, esse valor é 16px. */
+  background-color: rgb(72, 69, 69);
+  color: #fff;
+  border: 2px solid transparent;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: rgb(72, 69, 69);
+  border: 2px solid rgb(72, 69, 69);
+}
+
+.img-fluid {
+  /* Em imagens, para evitar distorção, nunca force tanto a largura quanto a altura. Somente uma das dimensões deve ser fixa e a outra automática */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 375px) {
+  html {
+    font-size: 13px;
+  }
+
+  body {
+    margin: 10px;
+  }
+
+  .col-25 {
+    width: 100%;
+  }
+
+  .col-75 {
+    width: 100%;
+  }
+
+  .lower-section-banners {
+    flex-direction: column;
+  }
+
+  .lower-section-banners img {
+    margin: 5px 0;
+    width: 100%;
+  }
 }

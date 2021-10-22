@@ -22,9 +22,11 @@
 
     <header>
       <div class="upper-header-section" id="upper-header-section">
-        <img alt="logo" />
+        <div class="logo-container">
+          <img class="img-fluid" src="./assets/images/logo.png" alt="logo" />
+        </div>
 
-        <div id="user-menu">
+        <div class="user-menu" id="user-menu">
           <ul class="horizontal-menu">
             <li><a href="#">Link 1</a></li>
             <li><a href="#">Link 2</a></li>
@@ -32,12 +34,18 @@
             <li><a href="#">Link 4</a></li>
           </ul>
 
-          <img id="user-avatar" />
+          <img
+            src="./assets/images/avatar.jpeg"
+            class="avatar-img"
+            id="user-avatar"
+            alt="Avatar do usuário"
+          />
         </div>
       </div>
       <div id="lower-header-section">
         <nav>
-          <ul>
+          <!-- Ao colocarmos várias classes para o mesmo elementos, só precisamos separar cada uma delas com um espaço -->
+          <ul class="horizontal-menu nav-menu">
             <li><a href="#">Nav Link</a></li>
             <li><a href="#">Nav Link</a></li>
             <li><a href="#">Nav Link</a></li>
@@ -50,62 +58,91 @@
       </div>
     </header>
 
-    <main>
-      <aside id="side-left-articles">
-        <article>
+    <main class="row">
+      <aside class="col col-25" id="side-left-articles">
+        <article class="box article-box">
           <h2>Title</h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime
             deserunt corrupti est et nulla nihil maiores animi soluta nam
-            obcaecati unde blanditiis, id quo temporibus expedita laudantium
-            tempore voluptatibus! Deserunt?
+            obcaecati unde blanditiis.
           </p>
-          <button>View more</button>
+          <div>
+            <button class="btn">View more</button>
+          </div>
         </article>
-        <article>
+        <article class="box article-box">
           <h2>Title</h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime
             deserunt corrupti est et nulla nihil maiores animi soluta nam
-            obcaecati unde blanditiis, id quo temporibus expedita laudantium
-            tempore voluptatibus! Deserunt?
+            obcaecati unde blanditiis.
           </p>
-          <button>View more</button>
+          <div>
+            <button class="btn">View more</button>
+          </div>
         </article>
-        <article>
+        <article class="box article-box">
           <h2>Title</h2>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime
             deserunt corrupti est et nulla nihil maiores animi soluta nam
-            obcaecati unde blanditiis, id quo temporibus expedita laudantium
-            tempore voluptatibus! Deserunt?
+            obcaecati unde blanditiis.
           </p>
-          <button>View more</button>
+          <div>
+            <button class="btn">View more</button>
+          </div>
         </article>
       </aside>
 
-      <section id="promotional-banner">
-        <img />
-      </section>
+      <div class="col col-75">
+        <section class="full-width-banner" id="promotional-banner">
+          <img
+            class="img-fluid"
+            src="./assets/images/banner-principal.png"
+            alt="Promoção de smartphones"
+          />
+        </section>
 
-      <section id="products-container">
-        <div>
-          <h2>Title</h2>
+        <section class="row" id="products-container">
+          <div class="col col-50">
+            <div class="box product-box">
+              <h2>Produto X</h2>
 
-          <img />
-        </div>
-        <div>
-          <h2>Title</h2>
+              <img
+                class="img-fluid"
+                src="./assets/images/product1.webp"
+                alt="Produto X"
+              />
+            </div>
+          </div>
+          <div class="col col-50">
+            <div class="box product-box">
+              <h2>Produto Y</h2>
+              <img
+                class="img-fluid"
+                src="./assets/images/product2.webp"
+                alt="Produto X"
+              />
+            </div>
+          </div>
+        </section>
 
-          <img />
-        </div>
-      </section>
-
-      <section id="lower-section-banners">
-        <img />
-        <img />
-        <img />
-      </section>
+        <section class="lower-section-banners" id="lower-section-banners">
+          <img
+            src="./assets/images/banner-small-1.webp"
+            alt="Banner promocional"
+          />
+          <img
+            src="./assets/images/banner-small-2.webp"
+            alt="Banner promocional"
+          />
+          <img
+            src="./assets/images/banner-small-3.webp"
+            alt="Banner promocional"
+          />
+        </section>
+      </div>
     </main>
   </body>
 </html>
